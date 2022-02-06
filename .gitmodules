@@ -1,0 +1,20 @@
+[submodule "Targets/port/.vim/bundle/nerdtree"]
+	path = Targets/port/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+	branch = master
+[submodule "Targets/port/.vim/bundle/vim"]
+	path = Targets/port/.vim/bundle/vim
+	url = https://github.com/dracula/vim.git
+	branch = master
+[submodule "Targets/port/.vim/bundle/vim-airline"]
+	path = Targets/port/.vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+	branch = master
+[submodule "Targets/port/.vim/bundle/command-t"]
+	path = Targets/port/.vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git
+	branch = master
+[submodule "Targets/port/ohmyzsh"]
+	path = Targets/port/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
