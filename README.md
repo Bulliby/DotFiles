@@ -13,3 +13,5 @@
 ./deploy.bash -t home
 ./deploy.bash --help
 ```
+
+* Pour ajouter un `submodule` : `git submodule add -b master https://github.com/ohmyzsh/ohmyzsh.git`

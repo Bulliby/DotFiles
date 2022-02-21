@@ -22,3 +22,27 @@
 	path = Targets/IRobot/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 	branch = master
+[submodule "Targets/Mib/.vim/bundle/vim"]
+	path = Targets/Mib/.vim/bundle/vim
+	url = https://github.com/dracula/vim.git
+	branch = master
+[submodule "Targets/Mib/.vim/bundle/nerdtree"]
+	path = Targets/Mib/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+	branch = master
+[submodule "Targets/Mib/.vim/bundle/vim-airline"]
+	path = Targets/Mib/.vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+	branch = master
+[submodule "Targets/Mib/.vim/bundle/vim-commentary"]
+	path = Targets/Mib/.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+	branch = master
+[submodule "Targets/Mib/.vim/bundle/command-t"]
+	path = Targets/Mib/.vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git
+	branch = main
+[submodule "Targets/Mib/ohmyzsh"]
+	path = Targets/Mib/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
