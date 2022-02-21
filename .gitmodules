@@ -18,3 +18,7 @@
 	path = Targets/IRobot/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	branch = master
+[submodule "Targets/IRobot/.vim/bundle/vim-commentary"]
+	path = Targets/IRobot/.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+	branch = master
