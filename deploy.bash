@@ -27,11 +27,10 @@ UsagePrint
     exit $E_BADARGS
 }
 
-options=$(getopt -a -n "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@")
+set -e
 
-if [ $? -ne 0 ]; then
-	usage
-fi
+options=$(getopt -a -n "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@" || { usage >&2 && false; })
+# {....} is grouping output see : https://www.linux.com/topic/desktop/all-about-curly-braces-bash/
 
 eval set --$options
 
