@@ -46,3 +46,11 @@
 	path = Targets/Mib/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	branch = master
+[submodule "Targets/IRobot/.vim/bundle/--force"]
+	path = Targets/IRobot/.vim/bundle/--force
+	url = https://github.com/posva/vim-vue.git
+	branch = master
+[submodule "Targets/IRobot/.vim/bundle/vim-vue"]
+	path = Targets/IRobot/.vim/bundle/vim-vue
+	url = https://github.com/posva/vim-vue.git
+	branch = master
