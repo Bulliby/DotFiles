@@ -6,7 +6,7 @@
 "    By: bulliby <wellsguillaume@gmail.com>              /   ____/_  _  __     "
 "                                                       /    \  _\ \/ \/ /     "
 "    Created: 2017/09/26 19:56:48 by bulliby            \     \_\ \     /      "
-"    Updated: 2021/11/01 18:16:21 by waxer               \________/\/\_/       "
+"    Updated: 2022/05/08 21:51:36 by waxer               \________/\/\_/       "
 "                                                                              "
 " **************************************************************************** "
 
@@ -147,3 +147,5 @@ let g:UltiSnipsEditSplit="vertical"
 "Avoid annoying higlithing
 let g:dracula_italic = 0
 colorscheme dracula
+let g:vue_pre_processors = 'detect_on_enter'
+let g:loaded_ruby_provider = 1
