@@ -58,3 +58,7 @@
 	path = Targets/IRobot/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 	branch = master
+[submodule "Targets/Mib/.vim/bundle/vim-javascript"]
+	path = Targets/Mib/.vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+	branch = master
