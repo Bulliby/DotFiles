@@ -93,7 +93,7 @@ alias vi="vim"
 alias a="php artisan"
 alias glar='grep -rn --exclude-dir="vendor" --exclude-dir="node_module" --exclude="tags"'
 alias grep="grep --color=always"
-alias projects="cat ~/Nextcloud/Scripts/projects | sort -t '|' -k 2"
+alias projects="cat ~/Nextcloud/Scripts/projects | sort -t '|' -k 2 | less"
 alias red="systemctl --user start redshift"
 alias nred="systemctl --user stop redshift"
 alias sz="source $HOME/.zshrc"

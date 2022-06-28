@@ -93,9 +93,10 @@ alias vi="vim"
 alias a="php artisan"
 alias glar='grep -rn --exclude-dir="vendor" --exclude-dir="node_module" --exclude="tags"'
 alias grep="grep --color=always"
-alias projects="cat ~/Nextcloud/Scripts/projects | sort -t '|' -k 2"
+alias projects="cat ~/Nextcloud/Scripts/projects | sort -t '|' -k 2 | less"
 alias red="systemctl --user start redshift"
 alias nred="systemctl --user stop redshift"
 alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
-alias rpi='ssh -p 35678 -i /home/bulliby/.ssh/id_rpi waxer@192.168.1.25'
+alias rpi='ssh -p 35678 -i /home/waxer/.ssh/id_local_key waxer@192.168.1.25'
+alias mib='ssh -p 14498 -i /home/waxer/.ssh/id_local_key bulliby@192.168.1.123'
