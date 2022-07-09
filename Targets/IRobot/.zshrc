@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 alias gt="git status"
 alias gl="git log --graph --oneline --decorate --all"
-alias han="ssh -p 14498 waxer@wellsguillaume.fr"
+alias han="ssh -p 14498 -i ~/.ssh/id_hanckock waxer@wellsguillaume.fr"
 alias bip="echo -e '\a'"
 alias vi="vim"
 alias a="php artisan"

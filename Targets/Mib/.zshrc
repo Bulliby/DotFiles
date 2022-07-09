@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vim"
 alias gt="git status"
 alias gl="git log --graph --oneline --decorate --all"
-alias han="ssh -p 14498 waxer@wellsguillaume.fr"
+alias han="ssh -p 14498 -i ~/.ssh/id_hanckock waxer@wellsguillaume.fr"
 alias bip="echo -e '\a'"
 alias vi="vim"
 alias a="php artisan"
@@ -98,4 +98,5 @@ alias red="systemctl --user start redshift"
 alias nred="systemctl --user stop redshift"
 alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
-alias rpi='ssh -p 35678 -i /home/bulliby/.ssh/id_rpi waxer@192.168.1.25'
+alias rpi='ssh -p 35678 -i /home/bulliby/.ssh/id_local_key waxer@192.168.1.25'
+alias irobot='ssh -p 14498 -i /home/bulliby/.ssh/id_local_key waxer@192.168.1.142'
