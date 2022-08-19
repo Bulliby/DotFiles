@@ -100,3 +100,4 @@ alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
 alias rpi='ssh -p 35678 -i /home/waxer/.ssh/id_local_key waxer@192.168.1.25'
 alias mib='ssh -p 14498 -i /home/waxer/.ssh/id_local_key bulliby@192.168.1.123'
+alias pro="docker exec -it projects-server-1 su www-owner -c"
