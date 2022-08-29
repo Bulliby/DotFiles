@@ -62,3 +62,7 @@
 	path = Targets/Mib/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 	branch = master
+[submodule "Targets/IRobot/.vim/bundle/vim-mustache-handlebars"]
+	path = Targets/IRobot/.vim/bundle/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git
+	branch = master
