@@ -101,3 +101,4 @@ alias ez="$EDITOR $HOME/.zshrc"
 alias rpi='ssh -p 35678 -i /home/waxer/.ssh/id_local_key waxer@192.168.1.25'
 alias mib='ssh -p 14498 -i /home/waxer/.ssh/id_local_key bulliby@192.168.1.123'
 alias pro="docker exec --user www-owner -it projects-server-1"
+alias tags='ctags -R --exclude="node_modules" --exclude="*.js" --exclude="var" --exclude="translations" --exclude="templates" --exclude="public" .'
