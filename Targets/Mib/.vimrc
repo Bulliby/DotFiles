@@ -6,7 +6,7 @@
 "    By: bulliby <wellsguillaume@gmail.com>              /   ____/_  _  __     "
 "                                                       /    \  _\ \/ \/ /     "
 "    Created: 2017/09/26 19:56:48 by bulliby            \     \_\ \     /      "
-"    Updated: 2021/11/01 18:16:21 by waxer               \________/\/\_/       "
+"    Updated: 2022/09/24 15:01:03 by bulliby             \________/\/\_/       "
 "                                                                              "
 " **************************************************************************** "
 
@@ -25,7 +25,7 @@
 
 "Commant T
 "
-:noremap <leader>f :CommandT<CR>
+:noremap <leader>cf :CommandT<CR>
 :noremap <leader>b :CommandTBuffer<CR>
 :noremap <leader>t :CommandTTag<CR>
 :noremap <leader>l :CommandTLine<CR>
@@ -37,6 +37,7 @@
 :   autocmd BufNewFile,BufRead *.html setlocal wrap
 :   autocmd BufNewFile,BufRead *.html.twig setlocal wrap
 :   autocmd BufNewFile,BufRead *.vue setlocal nowrap
+:   autocmd BufNewFile,BufRead *.js setlocal nowrap
 :aug END
 
 :aug comment
@@ -109,9 +110,9 @@ augroup END
 " }}}
 
 " Windows Buffers {{{
-:noremap <leader>n :NERDTreeToggle<CR>
+:noremap <leader>n :NvimTreeToggle<CR>
 :noremap <leader>q :q <CR>
-:noremap <leader>x :bp <CR> :bd# <CR>
+:noremap <leader>x :bd <CR>
 :noremap <leader>w :w <CR>
 :noremap <leader>g :tabprev <CR>
 :noremap <leader>h :tabnext <CR>
@@ -147,3 +148,8 @@ let g:UltiSnipsEditSplit="vertical"
 "Avoid annoying higlithing
 let g:dracula_italic = 0
 colorscheme dracula
+
+let g:vdebug_options = {}
+let g:vdebug_options["port"] = 9003
+let g:vdebug_options.path_maps = {"/srv/http": "/home/bulliby/dev/PHP/auth-belote"}
+let g:CommandTPreferredImplementation='lua'

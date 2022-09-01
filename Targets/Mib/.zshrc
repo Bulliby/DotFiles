@@ -100,3 +100,5 @@ alias sz="source $HOME/.zshrc"
 alias ez="$EDITOR $HOME/.zshrc"
 alias rpi='ssh -p 35678 -i /home/bulliby/.ssh/id_local_key waxer@192.168.1.25'
 alias irobot='ssh -p 14498 -i /home/bulliby/.ssh/id_local_key waxer@192.168.1.142'
+alias pro="docker exec --user www-owner -it notheus-server-1"
+alias vim="nvim"

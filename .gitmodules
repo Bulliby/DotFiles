@@ -66,3 +66,7 @@
 	path = Targets/IRobot/.vim/bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
 	branch = master
+[submodule "Targets/Mib/.vim/bundle/vdebug"]
+	path = Targets/Mib/.vim/bundle/vdebug
+	url = https://github.com/vim-vdebug/vdebug.git
+	branch = master
