@@ -35,3 +35,6 @@ vim.keymap.set('n', '<leader>so', builtin.oldfiles, {})
 -- bbye
 vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
 
+-- muscle
+vim.keymap.set('i', '<esc>', '<nop>')
+vim.keymap.set('i', 'jk', '<esc>')

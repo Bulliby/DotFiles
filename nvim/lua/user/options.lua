@@ -15,13 +15,13 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.ignorecase = true
 vim.opt.wrap = false
-vim.opt.mouse = 'a'
+vim.opt.mouse = ''
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- (https://github.com/jessarcher/dotfiles) --
 vim.opt.scrolloff = 8
-vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
+-- vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
 vim.opt.confirm = true -- ask for confirmation instead of erroring
 vim.opt.undofile = true -- persistent undo
 vim.opt.shortmess:append({ I = true }) -- disable the splash screen

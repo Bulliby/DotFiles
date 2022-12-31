@@ -13,6 +13,7 @@ require('nvim-treesitter.configs').setup({
         'json',
         'lua',
         'php',
+        'vue',
     },
     textobjects = {
         select = {
