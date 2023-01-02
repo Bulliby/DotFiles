@@ -76,7 +76,7 @@ clean()
     rm -${v}f $HOME/.bashrc
 
     # L'expansion avec les accolad ne semble pas fonctionner pour les dossiers
-    rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps
+    rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps $HOME/.config/nvim
 }
 
 
@@ -93,6 +93,7 @@ deploy()
     ln -${v}s $ACTIVE_PATH/.bashrc $HOME/.bashrc && \
     ln -${v}s $ACTIVE_PATH/.zshrc $HOME/.zshrc
     ln -${v}s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
+    ln -${v}s $PWD/nvim $HOME/.config/nvim
 
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") init $ACTIVE_PATH
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") update $ACTIVE_PATH
