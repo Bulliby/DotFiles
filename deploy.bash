@@ -72,7 +72,7 @@ restore_stderr_stdout()
 
 clean()
 {
-    rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.yml,.zshrc,.zsh_bindkey}
+    rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.yml,.zshrc,.zsh_bindkey,.tmux.conf}
     rm -${v}f $HOME/.bashrc
 
     # L'expansion avec les accolad ne semble pas fonctionner pour les dossiers
@@ -94,6 +94,7 @@ deploy()
     ln -${v}s $ACTIVE_PATH/.zshrc $HOME/.zshrc
     ln -${v}s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
     ln -${v}s $PWD/nvim $HOME/.config/nvim
+    ln -${v}s $PWD/.tmux.conf $HOME/.tmux.conf
 
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") init $ACTIVE_PATH
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") update $ACTIVE_PATH
