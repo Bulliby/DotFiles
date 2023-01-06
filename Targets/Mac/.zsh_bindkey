@@ -1,0 +1,76 @@
+bindkey -R -M viins "^A"-"^C" self-insert
+bindkey -M viins "^D" list-choices
+bindkey -R -M viins "^E"-"^F" self-insert
+bindkey -M viins "^G" list-expand
+bindkey -M viins "^H" vi-backward-delete-char
+bindkey -M viins "^J" accept-line
+bindkey -M viins "^K" self-insert
+bindkey -M viins "^L" clear-screen
+bindkey -R -M viins "^N"-"^P" self-insert
+bindkey -M viins "^Q" vi-quoted-insert
+bindkey -M viins "^R" history-incremental-search-backward
+bindkey -M viins "^S" history-incremental-search-forward
+bindkey -M viins "^T" self-insert
+bindkey -M viins "^U" vi-kill-line
+bindkey -M viins "^V" vi-quoted-insert
+bindkey -M viins "^W" vi-backward-kill-word
+bindkey -M viins "^X^R" _read_comp
+bindkey -M viins "^X?" _complete_debug
+bindkey -M viins "^XC" _correct_filename
+bindkey -M viins "^Xa" _expand_alias
+bindkey -M viins "^Xc" _correct_word
+bindkey -M viins "^Xd" _list_expansions
+bindkey -M viins "^Xe" _expand_word
+bindkey -M viins "^Xh" _complete_help
+bindkey -M viins "^Xm" _most_recent_file
+bindkey -M viins "^Xn" _next_tags
+bindkey -M viins "^Xt" _complete_tag
+bindkey -M viins "^X~" _bash_list-choices
+bindkey -R -M viins "^Y"-"^Z" self-insert
+bindkey -M viins "^[" vi-cmd-mode
+bindkey -M viins "^[," _history-complete-newer
+bindkey -M viins "^[/" _history-complete-older
+bindkey -M viins "^[OA" up-line-or-beginning-search
+bindkey -M viins "^[OB" down-line-or-beginning-search
+bindkey -M viins "^[OC" vi-forward-char
+bindkey -M viins "^[OD" vi-backward-char
+bindkey -M viins "^[OF" end-of-line
+bindkey -M viins "^[OH" beginning-of-line
+bindkey -M viins "^[[1;5C" forward-word
+bindkey -M viins "^[[1;5D" backward-word
+bindkey -M viins "^[[1~" beginning-of-line
+bindkey -M viins "^[[200~" bracketed-paste
+bindkey -M viins "^[[3;5~" kill-word
+bindkey -M viins "^[[3~" delete-char
+bindkey -M viins "^[[4~" end-of-line
+bindkey -M viins "^[[5~" up-line-or-history
+bindkey -M viins "^[[6~" down-line-or-history
+bindkey -M viins "^[[A" up-line-or-history
+bindkey -M viins "^[[B" down-line-or-history
+bindkey -M viins "^[[C" vi-forward-char
+bindkey -M viins "^[[D" vi-backward-char
+bindkey -M viins "^[[Z" reverse-menu-complete
+bindkey -M viins "^[~" _bash_complete-word
+bindkey -R -M viins "^\\\\"-"~" self-insert
+bindkey -R -M viins "\M-^@"-"\M-^?" self-insert
+# Unactivate Delete key
+bindkey -M viins '^?' stop-that-train-im-living
+# Unactivate Enter key
+bindkey -M viins "^M" stop-that-train-im-living
+# Unactivate Up key
+bindkey -M viins "^[OA" stop-that-train-im-living
+# Unactivate Down key
+bindkey -M viins "^[OB" stop-that-train-im-living
+# Add enter key Ctrl J
+bindkey -M viins "^J" accept-line
+# add history up to Ctrl + N
+bindkey -M viins "^N" down-line-or-beginning-search
+# add history down to Ctrl + P
+bindkey -M viins "^P" up-line-or-beginning-search
+
+zle -N stop-that-train-im-living
+
+#man sl
+function stop-that-train-im-living() {
+    sl
+}

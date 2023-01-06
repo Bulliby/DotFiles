@@ -14,6 +14,7 @@ require('nvim-treesitter.configs').setup({
         'lua',
         'php',
         'vue',
+        'vim',
     },
     textobjects = {
         select = {

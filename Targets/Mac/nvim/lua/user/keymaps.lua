@@ -6,12 +6,13 @@ vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 -- Cycle and close buffer
 vim.keymap.set('n', '<leader>w', ':w<CR>')
+vim.keymap.set('v', '<leader>y', '"+y<CR>')
 vim.keymap.set('n', '<leader>y', '"+y<CR>')
 vim.keymap.set('n', '<leader>f', '<C-W><RIGHT>')
 vim.keymap.set('n', '<leader>a', '<C-W><LEFT>')
 vim.keymap.set('n', '<leader><space>', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader>tg', ':tabprev<CR>')
-vim.keymap.set('n', '<leader>tn', ':tabnext<CR>')
+vim.keymap.set('n', '<leader>tf', ':tabprev<CR>')
+vim.keymap.set('n', '<leader>ta', ':tabnext<CR>')
 
 -- r used for double key (shortcut less used)
 -- Reload all buffers who have changed

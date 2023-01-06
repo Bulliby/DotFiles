@@ -29,7 +29,7 @@ UsagePrint
 
 set -e
 
-options=$(getopt -a -n "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@" || { usage >&2 && false; })
+options=$(getopt -a "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@" || { usage >&2 && false; })
 # {....} is grouping output see : https://www.linux.com/topic/desktop/all-about-curly-braces-bash/
 
 eval set --$options
@@ -93,8 +93,8 @@ deploy()
     ln -${v}s $ACTIVE_PATH/.bashrc $HOME/.bashrc && \
     ln -${v}s $ACTIVE_PATH/.zshrc $HOME/.zshrc
     ln -${v}s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
-    ln -${v}s $PWD/nvim $HOME/.config/nvim
-    ln -${v}s $PWD/.tmux.conf $HOME/.tmux.conf
+    ln -${v}s $ACTIVE_PATH/nvim $HOME/.config/nvim
+    ln -${v}s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
 
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") init $ACTIVE_PATH
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") update $ACTIVE_PATH

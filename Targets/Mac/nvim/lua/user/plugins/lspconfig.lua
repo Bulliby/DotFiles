@@ -8,11 +8,11 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 )
 
 lspconfig.phpactor.setup({
-    cmd = {'/home/waxer/.local/share/nvim/plugged/phpactor/bin/phpactor', 'language-server-php'}
+    cmd = {'/Users/gwells/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'}
 })
 
 lspconfig.vuels.setup({
-    cmd = {'/home/waxer/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
+    cmd = {'/Users/gwells/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
