@@ -27,6 +27,13 @@ Installer une des fonts : https://www.nerdfonts.com/font-downloads (patché)
 Npm install vuels dans le dossier specifier par la variable cmd
 Creer le fichier tsconfig.json à la racine du projet vue. (voir pk)
 
+## INIT
+
+```shell
+cd /home/bulliby/.local/share/nvim/site/pack/packer/opt/phpactor
+composer install
+```
+
 ## TIPS
 
 ```vim
