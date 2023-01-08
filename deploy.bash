@@ -29,7 +29,7 @@ UsagePrint
 
 set -e
 
-options=$(getopt -a -n "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@" || { usage >&2 && false; })
+options=$(getopt -a "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@" || { usage >&2 && false; })
 # {....} is grouping output see : https://www.linux.com/topic/desktop/all-about-curly-braces-bash/
 
 eval set --$options
@@ -72,11 +72,11 @@ restore_stderr_stdout()
 
 clean()
 {
-    rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.yml,.zshrc,.zsh_bindkey}
+    rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.yml,.zshrc,.zsh_bindkey,.tmux.conf}
     rm -${v}f $HOME/.bashrc
 
     # L'expansion avec les accolad ne semble pas fonctionner pour les dossiers
-    rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps
+    rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps $HOME/.config/nvim
 }
 
 
@@ -93,6 +93,8 @@ deploy()
     ln -${v}s $ACTIVE_PATH/.bashrc $HOME/.bashrc && \
     ln -${v}s $ACTIVE_PATH/.zshrc $HOME/.zshrc
     ln -${v}s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
+    ln -${v}s $ACTIVE_PATH/nvim $HOME/.config/nvim
+    ln -${v}s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
 
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") init $ACTIVE_PATH
     git submodule $([[ $verbose != 1 ]] && echo "--quiet") update $ACTIVE_PATH
