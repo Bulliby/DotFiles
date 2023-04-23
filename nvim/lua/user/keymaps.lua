@@ -4,6 +4,7 @@ vim.g.maplocalleader = ','
 -- Basic mappings
 vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
+
 -- Cycle and close buffer
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('v', '<leader>y', '"+y<CR>')
@@ -39,3 +40,7 @@ vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
 -- muscle
 vim.keymap.set('i', '<esc>', '<nop>')
 vim.keymap.set('i', 'jk', '<esc>')
+
+-- Lsp
+vim.keymap.set({'n','i','x'}, '<leader>le', vim.diagnostic.enable)
+vim.keymap.set({'n','i','x'}, '<leader>ld', vim.diagnostic.disable)

@@ -7,12 +7,14 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     require('cmp_nvim_lsp').default_capabilities()
 )
 
+local home = os.getenv("HOME")
+
 lspconfig.phpactor.setup({
-    cmd = {'/home/waxer/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'}
+    cmd = {home..'/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'}
 })
 
 lspconfig.vuels.setup({
-    cmd = {'/home/waxer/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
+    cmd = {home..'/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -60,5 +62,8 @@ vim.diagnostic.config({
         source = 'always',
         header = '',
         prefix = '',
+        --underline= 'severity',
+        update_in_insert = false,
     },
 })
+
