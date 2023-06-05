@@ -20,7 +20,9 @@
 
 * Icon nvim-tree 
 
-Installer une des fonts : https://www.nerdfonts.com/font-downloads (patché)
+Installer une des fonts : https://www.nerdfonts.com/font-downloads
+
+> For exampe Cousine
 
 * LSP vue
 
