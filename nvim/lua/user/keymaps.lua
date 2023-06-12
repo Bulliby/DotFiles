@@ -21,9 +21,6 @@ vim.keymap.set('n', '<leader>re', ':bufdo checktime<CR>')
 vim.keymap.set('n', '<leader>rp', ':set paste!<CR>')
 vim.keymap.set('n', '<leader>rf', ':NvimTreeFindFileToggle<CR>')
 
--- i for insert mode
-vim.keymap.set('i', '<leader>jk', '<ESC>')
-
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sF', [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]])
@@ -37,10 +34,8 @@ vim.keymap.set('n', '<leader>so', builtin.oldfiles, {})
 -- bbye
 vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
 
--- muscle
-vim.keymap.set('i', '<esc>', '<nop>')
-vim.keymap.set('i', 'jk', '<esc>')
-
 -- Lsp
 vim.keymap.set({'n','i','x'}, '<leader>le', vim.diagnostic.enable)
 vim.keymap.set({'n','i','x'}, '<leader>ld', vim.diagnostic.disable)
+
+vim.keymap.set('i', 'jk', '<ESC>')
