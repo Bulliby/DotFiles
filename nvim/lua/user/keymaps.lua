@@ -38,4 +38,4 @@ vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
 vim.keymap.set({'n','i','x'}, '<leader>le', vim.diagnostic.enable)
 vim.keymap.set({'n','i','x'}, '<leader>ld', vim.diagnostic.disable)
 
-vim.keymap.set('i', 'jk', '<ESC>')
+vim.keymap.set('i', 'jk', '<esc>')
