@@ -344,9 +344,6 @@ working_directory: /home/waxer
 # even if the ConPTY backend is available.
 #winpty_backend: false
 
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
-
 #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
