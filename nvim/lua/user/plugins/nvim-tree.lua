@@ -1,7 +1,17 @@
--- vim.g.nvim_tree_indent_markers = 1
--- vim.g.nvim_tree_git_hl = 1
+local function on_attach(bufnr)
+    local api = require "nvim-tree.api"
+    local function opts(desc)
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+    -- default mappings
+    api.config.mappings.default_on_attach(bufnr)
+    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+    vim.keymap.set('n', 's', api.node.open.vertical, opts('Open: Vertical Split'))
+end
+
 
 require('nvim-tree').setup({
+    on_attach = on_attach,
     open_on_setup = true,
     open_on_setup_file = true,
     hijack_cursor = true,
@@ -21,11 +31,6 @@ require('nvim-tree').setup({
     view = {
         number = true,
         relativenumber = true,
-        mappings = {
-            list = {
-                { key = 's', action="vsplit", },
-            }
-        }
     },
     filters = {
         dotfiles = true,
