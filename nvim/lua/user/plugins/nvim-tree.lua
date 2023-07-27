@@ -12,8 +12,6 @@ end
 
 require('nvim-tree').setup({
     on_attach = on_attach,
-    open_on_setup = true,
-    open_on_setup_file = true,
     hijack_cursor = true,
     git = {
         enable = false,
