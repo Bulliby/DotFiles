@@ -101,7 +101,7 @@ deploy()
 
 	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-	ln -${v}sn $ACTIVE_PATH/ohmyzsh $HOME/.oh-my-zsh
+    git clone git@github.com:ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 	cp  $([[ $verbose = 1 ]] && echo "-v") robbyrussell.zsh-theme-pi $HOME/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
     [[ $verbose = 1 ]] && ruby -v || ruby -v > /dev/null
