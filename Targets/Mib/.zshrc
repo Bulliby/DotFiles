@@ -103,3 +103,4 @@ alias irobot='ssh -p 14498 -i /home/bulliby/.ssh/id_local_key waxer@192.168.1.14
 alias pro="docker exec --user www-owner -it notheus-server-1"
 alias xbel="docker exec --user www-owner -it belote-back-1"
 alias vim="nvim"
+alias upa="pacman -Sy archlinux-keyring && pacman -Su"

@@ -105,3 +105,4 @@ alias tags='ctags -R --exclude="node_modules" --exclude="*.js" --exclude="var" -
 alias vim="nvim"
 alias rsyncmib="rsync -aPe 'ssh -p 14498 -i ~/.ssh/id_local_key'"
 alias xbel="docker exec --user www-owner -it belote-back-1"
+alias upa="pacman -Sy archlinux-keyring && pacman -Su"
