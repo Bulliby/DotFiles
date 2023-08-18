@@ -6,7 +6,7 @@
 	name = Guillaume Wells
 	email = wellsguillaume@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/bulliby/.gitignore_global
 [pull]
 	ff = only
