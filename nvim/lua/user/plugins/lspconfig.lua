@@ -10,11 +10,48 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 local home = os.getenv("HOME")
 
 lspconfig.phpactor.setup({
-    cmd = {home..'/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'}
+    cmd = {home..'/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'},
 })
 
 lspconfig.vuels.setup({
     cmd = {home..'/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
+})
+
+lspconfig.html.setup({
+    cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-html-language-server', '--stdio'},
+    filetypes = {"html"},
+    configurationSection = {
+        { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true,
+        },
+        provideFormatter = true,
+    },
+    settings = {
+        css = {
+            lint = {
+                validProperties = {},
+            },
+        },
+    },
+})
+
+lspconfig.cssls.setup({
+    cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server', '--stdio'},
+    filetypes = { "css", "scss", "less" },
+    settings = {
+        css = {
+            validate = true
+        },
+        less = {
+            validate = true
+        },
+        scss = {
+            validate = true
+        }
+    },
+    single_file_support = true,
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {

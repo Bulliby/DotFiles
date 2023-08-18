@@ -19,6 +19,7 @@ vim.opt.mouse = ''
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.undofile = false
+vim.opt.showcmd = true
 
 -- (https://github.com/jessarcher/dotfiles) --
 vim.opt.scrolloff = 8
