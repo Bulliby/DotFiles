@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #alias rm="/home/bulliby/dev/scripts/trashit.sh"
-export EDITOR="vim"
+export EDITOR="nvim"
 alias gt="git status"
 alias gl="git log --graph --oneline --decorate --all"
 alias han="ssh -p 14498 -i ~/.ssh/id_hanckock waxer@wellsguillaume.fr"
