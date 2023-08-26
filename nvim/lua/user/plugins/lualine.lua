@@ -3,6 +3,10 @@ local separator = { '"▏"', color = 'StatusLineNonText' }
 require('lualine').setup({
   options = {
     theme =  'onedark',
+    globalstatus = false,
+    disabled_filetypes = {
+        'NvimTree',
+    },
   },
   sections = {
     lualine_a = {
