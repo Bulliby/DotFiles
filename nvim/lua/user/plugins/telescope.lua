@@ -11,11 +11,11 @@ vim.cmd([[
 ]])
 
 telescope.setup({
-  defaults = {
-    path_display = { truncate = 1 },
-    prompt_prefix = '   ',
-    sorting_strategy = 'ascending',
-    file_ignore_patterns = { '.git/' },
+    defaults = {
+        path_display = { truncate = 1 },
+        prompt_prefix = '   ',
+        sorting_strategy = 'ascending',
+        file_ignore_patterns = { '.git/' },
         mappings = {
             n = {
                 ["<C-c>"] = require('telescope.actions').close,
@@ -26,24 +26,24 @@ telescope.setup({
                 ["<C-c>"] = require('telescope.actions').close,
             },
         },
-  },
-  pickers = {
-    find_files = {
-      hidden = true,
     },
-    buffers = {
-      previewer = false,
-      layout_config = {
-        width = 80,
-      },
+    pickers = {
+        find_files = {
+            hidden = true,
+        },
+        buffers = {
+            previewer = false,
+            layout_config = {
+                width = 80,
+            },
+        },
+        oldfiles = {
+            prompt_title = 'History',
+        },
+        lsp_references = {
+            previewer = false,
+        },
     },
-    oldfiles = {
-      prompt_title = 'History',
-    },
-    lsp_references = {
-      previewer = false,
-    },
-  },
 })
 
 telescope.load_extension('fzf')
