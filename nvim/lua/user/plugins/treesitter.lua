@@ -17,6 +17,7 @@ require('nvim-treesitter.configs').setup({
         'vim',
         'bash',
         'phpdoc',
+        'html',
     },
     textobjects = {
         select = {
