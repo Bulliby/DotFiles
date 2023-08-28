@@ -7,6 +7,7 @@ local function on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
     vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
     vim.keymap.set('n', 's', api.node.open.vertical, opts('Open: Vertical Split'))
+    vim.keymap.set('n', 't', api.node.open.tab, opts('Open: Tab'))
 end
 
 

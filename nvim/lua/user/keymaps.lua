@@ -12,8 +12,8 @@ vim.keymap.set('n', '<leader>y', '"+y<CR>')
 vim.keymap.set('n', '<leader>f', '<C-W><RIGHT>')
 vim.keymap.set('n', '<leader>a', '<C-W><LEFT>')
 vim.keymap.set('n', '<leader><space>', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader>tf', ':tabprev<CR>')
-vim.keymap.set('n', '<leader>ta', ':tabnext<CR>')
+vim.keymap.set('n', '<leader>g', ':tabprev<CR>')
+vim.keymap.set('n', '<leader>h', ':tabnext<CR>')
 
 -- r used for double key (shortcut less used)
 -- Reload all buffers who have changed
