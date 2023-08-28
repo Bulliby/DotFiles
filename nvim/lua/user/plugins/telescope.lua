@@ -16,6 +16,16 @@ telescope.setup({
     prompt_prefix = '   ',
     sorting_strategy = 'ascending',
     file_ignore_patterns = { '.git/' },
+        mappings = {
+            n = {
+                ["<C-c>"] = require('telescope.actions').close,
+                ["<ESC>"] = require('telescope.actions').close,
+            },
+            -- We are in insert mode when we are searching in searchbar.
+            i = {
+                ["<C-c>"] = require('telescope.actions').close,
+            },
+        },
   },
   pickers = {
     find_files = {
