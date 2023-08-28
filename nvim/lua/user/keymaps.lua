@@ -30,6 +30,8 @@ vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>sm', builtin.marks, {})
 vim.keymap.set('n', '<leader>so', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader>st', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>sc', builtin.git_commits, {})
 
 -- bbye
 vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
