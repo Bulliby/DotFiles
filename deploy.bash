@@ -16,11 +16,10 @@ usage()
 {
     cat <<UsagePrint
 Usage :
-    ./deploy.bash -t target [-v] [-d] [-h]
-    ./deploy.bash --target target [--verbose] [--debug] [--help]
+    ./deploy.bash -t target [-d] [-h]
+    ./deploy.bash --target target [--debug] [--help]
     Target: Is mandatory and represent a configuration directory in Tragets
-    Verbose : Permit to see what is done at each step
-    Debug: Stop on exception and show execution script line by line
+    Debug: Stop on exception and show execution script line by line (set -x)
     Help : Print this help
 UsagePrint
 
@@ -29,7 +28,7 @@ UsagePrint
 
 set -e
 
-options=$(getopt -a "$(basename $0)" -l "target:,help,verbose,debug" -- "t:hvd" "$@" || { usage >&2 && false; })
+options=$(getopt -a "$(basename $0)" -l "target:,help,debug" -- "t:hd" "$@" || { usage >&2 && false; })
 # {....} is grouping output see : https://www.linux.com/topic/desktop/all-about-curly-braces-bash/
 
 eval set --$options
@@ -39,21 +38,14 @@ while [ ! -z "$1" ]
 do
 	case "$1" in
 		-t) target="$2"; shift ;;
-        -v) verbose=1 ;;
 		-h) usage ;;
 		-d) debug=1 ;;
 		--target) target="$2"; shift ;;
 		--help) usage ;;
 		--debug) debug=1 ;;
-        --verbose) verbose=1 ;;
 	esac
 	shift
 done
-
-v=""
-if [[ $verbose ]]; then
-    v="v"
-fi
 
 if [ -z "$target" ]; then
     echo "target option is mandatory"
@@ -74,6 +66,7 @@ clean()
 {
     rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.yml,.zshrc,.zsh_bindkey,.tmux.conf}
     rm -${v}f $HOME/.bashrc
+    rm -r${v}f $HOME/.vim/bundle/*
 
     # L'expansion avec les accolad ne semble pas fonctionner pour les dossiers
     rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps $HOME/.config/nvim
@@ -82,24 +75,23 @@ clean()
 
 deploy()
 {
-    mkdir -${v}p $HOME/.config/procps
-    ln -${v}s $ACTIVE_PATH/.vim $HOME/.vim && \
-    ln -${v}s $ACTIVE_PATH/.vimrc $HOME/.vimrc && \
-    ln -${v}s $ACTIVE_PATH/.screenrc $HOME/.screenrc && \
-    ln -${v}s $ACTIVE_PATH/.gitignore_global $HOME/.gitignore_global && \
-    ln -${v}s $ACTIVE_PATH/.gitconfig $HOME/.gitconfig && \
-    ln -${v}s $ACTIVE_PATH/.alacritty.yml $HOME/.alacritty.yml && \
-    ln -${v}s $ACTIVE_PATH/toprc $HOME/.config/procps/toprc && \
-    ln -${v}s $ACTIVE_PATH/.bashrc $HOME/.bashrc && \
-    ln -${v}s $ACTIVE_PATH/.zshrc $HOME/.zshrc
-    ln -${v}s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
-    ln -${v}s $PWD/nvim $HOME/.config/nvim
-    ln -${v}s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
+    mkdir -p $HOME/.config/procps
+    ln -s $ACTIVE_PATH/.vim $HOME/.vim
+    ln -s $ACTIVE_PATH/.vimrc $HOME/.vimrc
+    ln -s $ACTIVE_PATH/.screenrc $HOME/.screenrc
+    ln -s $ACTIVE_PATH/.gitignore_global $HOME/.gitignore_global
+    ln -s $ACTIVE_PATH/.gitconfig $HOME/.gitconfig
+    ln -s $ACTIVE_PATH/.alacritty.yml $HOME/.alacritty.yml
+    ln -s $ACTIVE_PATH/toprc $HOME/.config/procps/toprc 
+    ln -s $ACTIVE_PATH/.bashrc $HOME/.bashrc
+    ln -s $ACTIVE_PATH/.zshrc $HOME/.zshrc
+    ln -s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
+    ln -s $PWD/nvim $HOME/.config/nvim
+    ln -s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
 
     git clone https://github.com/preservim/nerdtree.git $ACTIVE_PATH/.vim/bundle/nerdtree
     git clone https://github.com/dracula/vim.git $ACTIVE_PATH/.vim/bundle/dracula
     git clone https://github.com/vim-airline/vim-airline.git $ACTIVE_PATH/.vim/bundle/vim-airline
-    git clone https://github.com/wincent/command-t.git $ACTIVE_PATH/.vim/bundle/command-t
     git clone https://github.com/tpope/vim-commentary.git $ACTIVE_PATH/.vim/bundle/vim-commentary
 
     git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
@@ -107,22 +99,8 @@ deploy()
     #Packager
 	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-	cp  $([[ $verbose = 1 ]] && echo "-v") robbyrussell.zsh-theme-pi $HOME/.oh-my-zsh/themes/robbyrussell.zsh-theme
+	cp robbyrussell.zsh-theme-pi $HOME/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
-    [[ $verbose = 1 ]] && ruby -v || ruby -v > /dev/null
-	if [ $? -eq 0 ]; then
-	    cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
-        if [[ $verbose != 1 ]]; then
-            ruby extconf.rb > /dev/null && make > /dev/null
-        else
-            ruby extconf.rb && make 
-        fi
-	    if [ $? -ne 0 ]; then
-		    echo "Ruby compilation of command-t failed"
-        fi
-	else
-		echo "Ruby isn't installed and command-t haven't been configured"
-	fi
 }
 
 debug()
@@ -153,6 +131,8 @@ ACTIVE_PATH="$PWD/Targets/$target"
 
 if [[ $debug -eq 1 ]]; then
     debug
+else
+    close_stderr_stdout
 fi
 
 clean
@@ -165,3 +145,5 @@ if [ ! -z $CUSTOMS_SCRIPT ]; then
         source $s
     done
 fi
+
+restore_stderr_stdout
