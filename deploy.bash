@@ -96,28 +96,33 @@ deploy()
     ln -${v}s $PWD/nvim $HOME/.config/nvim
     ln -${v}s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
 
-    git submodule $([[ $verbose != 1 ]] && echo "--quiet") init $ACTIVE_PATH
-    git submodule $([[ $verbose != 1 ]] && echo "--quiet") update $ACTIVE_PATH
-
-	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    git clone https://github.com/preservim/nerdtree.git $ACTIVE_PATH/.vim/bundle/nerdtree
+    git clone https://github.com/dracula/vim.git $ACTIVE_PATH/.vim/bundle/dracula
+    git clone https://github.com/vim-airline/vim-airline.git $ACTIVE_PATH/.vim/bundle/vim-airline
+    git clone https://github.com/wincent/command-t.git $ACTIVE_PATH/.vim/bundle/command-t
+    git clone https://github.com/tpope/vim-commentary.git $ACTIVE_PATH/.vim/bundle/vim-commentary
 
     git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
+
+    #Packager
+	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 	cp  $([[ $verbose = 1 ]] && echo "-v") robbyrussell.zsh-theme-pi $HOME/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
-    # [[ $verbose = 1 ]] && ruby -v || ruby -v > /dev/null
-	# if [ $? -eq 0 ]; then
-	    # cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
-    #     if [[ $verbose != 1 ]]; then
-    #         ruby extconf.rb > /dev/null && make > /dev/null
-    #     else
-    #         ruby extconf.rb && make 
-    #     fi
-	    # if [ $? -ne 0 ]; then
-		    # echo "Ruby compilation of command-t failed"
-    #     fi
-	# else
-		# echo "Ruby isn't installed and command-t haven't been configured"
-	# fi
+    [[ $verbose = 1 ]] && ruby -v || ruby -v > /dev/null
+	if [ $? -eq 0 ]; then
+	    cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
+        if [[ $verbose != 1 ]]; then
+            ruby extconf.rb > /dev/null && make > /dev/null
+        else
+            ruby extconf.rb && make 
+        fi
+	    if [ $? -ne 0 ]; then
+		    echo "Ruby compilation of command-t failed"
+        fi
+	else
+		echo "Ruby isn't installed and command-t haven't been configured"
+	fi
 }
 
 debug()
