@@ -101,23 +101,23 @@ deploy()
 
 	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-    git clone git@github.com:ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
+    git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 	cp  $([[ $verbose = 1 ]] && echo "-v") robbyrussell.zsh-theme-pi $HOME/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
-    [[ $verbose = 1 ]] && ruby -v || ruby -v > /dev/null
-	if [ $? -eq 0 ]; then
-	    cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
-        if [[ $verbose != 1 ]]; then
-            ruby extconf.rb > /dev/null && make > /dev/null
-        else
-            ruby extconf.rb && make 
-        fi
-	    if [ $? -ne 0 ]; then
-		    echo "Ruby compilation of command-t failed"
-        fi
-	else
-		echo "Ruby isn't installed and command-t haven't been configured"
-	fi
+    # [[ $verbose = 1 ]] && ruby -v || ruby -v > /dev/null
+	# if [ $? -eq 0 ]; then
+	    # cd $HOME/.vim/bundle/command-t/ruby/command-t/ext/command-t
+    #     if [[ $verbose != 1 ]]; then
+    #         ruby extconf.rb > /dev/null && make > /dev/null
+    #     else
+    #         ruby extconf.rb && make 
+    #     fi
+	    # if [ $? -ne 0 ]; then
+		    # echo "Ruby compilation of command-t failed"
+    #     fi
+	# else
+		# echo "Ruby isn't installed and command-t haven't been configured"
+	# fi
 }
 
 debug()
