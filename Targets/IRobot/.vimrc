@@ -107,7 +107,7 @@ augroup END
 " }}}
 
 " Windows Buffers {{{
-:noremap <leader>n :NvimTreeToggle<CR>
+:noremap <leader>n :NERDTreeToggle<CR>
 :noremap <leader>q :q <CR>
 :noremap <leader>x :bp <CR> :bd# <CR>
 :noremap <leader>w :w <CR>
