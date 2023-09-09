@@ -18,6 +18,9 @@ require('nvim-treesitter.configs').setup({
         'bash',
         'phpdoc',
         'html',
+        'svelte',
+        'typescript',
+        'scss',
     },
     textobjects = {
         select = {

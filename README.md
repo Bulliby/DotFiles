@@ -14,7 +14,11 @@
 ./deploy.bash --help
 ```
 
-* Pour ajouter un `submodule` : `git submodule add -b master https://github.com/ohmyzsh/ohmyzsh.git`
+## Dependencies
+
+```shell
+
+```
 
 ## NVIM
 
@@ -24,7 +28,7 @@ Installer une des fonts : https://www.nerdfonts.com/font-downloads
 
 > For exampe Cousine
 
-* LSP vue
+## LSP vue
 
 Npm install vuels dans le dossier specifier par la variable cmd
 Creer le fichier tsconfig.json à la racine du projet vue. (voir pk)
