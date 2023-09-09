@@ -10,3 +10,5 @@
 	excludesfile = /home/bulliby/.gitignore_global
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
