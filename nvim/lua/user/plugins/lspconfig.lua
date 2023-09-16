@@ -17,25 +17,25 @@ lspconfig.vuels.setup({
     cmd = {home..'/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
 })
 
-lspconfig.html.setup({
-    cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-html-language-server', '--stdio'},
-    filetypes = {"html"},
-    configurationSection = {
-        { "html", "css", "javascript" },
-        embeddedLanguages = {
-            css = true,
-            javascript = true,
-        },
-        provideFormatter = true,
-    },
-    settings = {
-        css = {
-            lint = {
-                validProperties = {},
-            },
-        },
-    },
-})
+-- lspconfig.html.setup({
+--     cmd = {home..'/.local/share/nvim/plugged/vscode-langservers-extracted/bin/vscode-html-language-server', '--stdio'},
+--     filetypes = {"html"},
+--     configurationSection = {
+--         { "html", "css", "javascript" },
+--         embeddedLanguages = {
+--             css = true,
+--             javascript = true,
+--         },
+--         provideFormatter = true,
+--     },
+--     settings = {
+--         css = {
+--             lint = {
+--                 validProperties = {},
+--             },
+--         },
+--     },
+-- })
 
 lspconfig.cssls.setup({
     cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server', '--stdio'},
