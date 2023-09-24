@@ -21,6 +21,7 @@ require('nvim-treesitter.configs').setup({
         'svelte',
         'typescript',
         'scss',
+        'python'
     },
     textobjects = {
         select = {

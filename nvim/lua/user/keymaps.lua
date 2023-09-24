@@ -15,6 +15,12 @@ vim.keymap.set('n', '<leader><space>', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>g', ':tabprev<CR>')
 vim.keymap.set('n', '<leader>h', ':tabnext<CR>')
 
+-- Inner next (must have!)
+vim.keymap.set('n', 'c(', 'f(ci(')
+vim.keymap.set('n', 'c[', 'f[ci[')
+vim.keymap.set('n', 'c{', 'f{ci{')
+vim.keymap.set('n', 'c<', 'f<ci<')
+
 -- r used for double key (shortcut less used)
 -- Reload all buffers who have changed
 vim.keymap.set('n', '<leader>re', ':bufdo checktime<CR>')
