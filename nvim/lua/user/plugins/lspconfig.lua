@@ -13,6 +13,11 @@ lspconfig.phpactor.setup({
     cmd = {home..'/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'},
 })
 
+-- pacman -S pylsp
+lspconfig.pylsp.setup({
+    cmd = {'pylsp'},
+})
+
 lspconfig.vuels.setup({
     cmd = {home..'/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
 })
