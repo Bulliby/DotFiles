@@ -5,4 +5,8 @@ require('user.abbreviations')
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+local home = os.getenv("HOME")
+
+vim.cmd('source '..home..'/conf/DotFiles/nvim/vimscript/header.vim')
 vim.cmd[[colorscheme onedark]]
