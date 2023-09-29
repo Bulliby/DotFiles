@@ -201,8 +201,21 @@ bindsym Mod1+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+  position top
+  status_command i3status
+  tray_output none
+  colors {
+    statusline #dcd7ba
+    background #16161d
+    focused_workspace #16161d #16161d #c8c093
+    inactive_workspace #16161d #16161d #3E3E38
+  }
 }
+
+# class                 border  backgr. text    indicator child_border
+client.unfocused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
+client.focused_inactive #16161d #16161d #3E3E38 #6a9589 #3E3E38
+client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
