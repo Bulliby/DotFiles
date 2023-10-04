@@ -5,15 +5,14 @@ vim.g.maplocalleader = ','
 vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 
--- Cycle and close buffer
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('v', '<leader>y', '"+y<CR>')
 vim.keymap.set('n', '<leader>y', '"+y<CR>')
 vim.keymap.set('n', '<leader>f', '<C-W><RIGHT>')
 vim.keymap.set('n', '<leader>a', '<C-W><LEFT>')
 vim.keymap.set('n', '<leader><space>', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader>g', ':tabprev<CR>')
-vim.keymap.set('n', '<leader>h', ':tabnext<CR>')
+vim.keymap.set('n', '<leader>tp', ':tabprev<CR>')
+vim.keymap.set('n', '<leader>tn', ':tabnext<CR>')
 
 -- Inner next (must have!)
 vim.keymap.set('n', 'c(', 'f(ci(')
