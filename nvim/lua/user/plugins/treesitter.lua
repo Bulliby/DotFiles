@@ -15,7 +15,6 @@ require('nvim-treesitter.configs').setup({
         'php',
         'vue',
         'vim',
-        'bash',
         'phpdoc',
         'html',
         'svelte',

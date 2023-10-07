@@ -177,7 +177,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -229,3 +229,19 @@ client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
 exec_always /usr/bin/nextcloud
 for_window [class="Nextcloud"] floating enable, move scratchpad
 
+bindsym $mod+apostrophe exec i3-input -F "exec sh -c 'sleep %s && notify-send Remember-%ss-ago!'" -P 'Remind after: '
+
+mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3" {
+        bindsym l exec ~/.config/i3/scripts/lock.sh; mode "default"
+        bindsym s exec ~/.config/i3/scripts/lock.sh && systemctl suspend; mode "default"
+        bindsym h exec ~/.config/i3/scripts/lock.sh && systemctl hibernate; mode "default"
+        bindsym p exec systemctl poweroff; mode "default"
+        bindsym r exec systemctl reboot; mode "default"
+        bindsym e exec --no-startup-id i3-msg exit; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3"
+
+exec --no-startup-id feh --bg-fill ~/.config/i3/afterglow.png

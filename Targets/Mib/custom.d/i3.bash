@@ -1,10 +1,5 @@
 #! /bin/bash
 
-rm -rf $HOME/.config/i3/config
-rm -rf $HOME/.config/i3status/config
-rm -rf $HOME/.config/i3/scripts
+rm -rf $HOME/.config/i3
 
-ln -s $ACTIVE_PATH/i3/config $HOME/.config/i3/config
-ln -s $ACTIVE_PATH/i3/i3status/config $HOME/.config/i3status/config
-ln -s $ACTIVE_PATH/i3/scripts $HOME/.config/i3/scripts
-
+ln -s $ACTIVE_PATH/i3 $HOME/.config/i3
