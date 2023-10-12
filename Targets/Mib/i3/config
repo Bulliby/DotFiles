@@ -244,4 +244,4 @@ mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3" {
 
 bindsym $mod+Shift+e mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3"
 
-exec --no-startup-id feh --bg-fill ~/.config/i3/afterglow.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/afterglow.png
