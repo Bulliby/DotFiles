@@ -50,6 +50,32 @@ bindsym $mod+Shift+f exec setxkbmap -layout us -variant intl
 
 bindsym $mod+Shift+o exec bash ~/.config/i3/scripts/capture.sh
 
+# class                 border  backgr. text    indicator child_border
+client.unfocused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
+client.focused_inactive #16161d #16161d #3E3E38 #6a9589 #3E3E38
+client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
+
+# Open nextcloud in scratchpad
+exec_always /usr/bin/nextcloud
+for_window [class="Nextcloud"] floating enable, move scratchpad
+
+bindsym $mod+apostrophe exec i3-input -F "exec sh -c 'sleep %s && notify-send Remember-%ss-ago!'" -P 'Remind after: '
+
+mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3" {
+        bindsym l exec ~/.config/i3/scripts/lock.sh; mode "default"
+        bindsym s exec ~/.config/i3/scripts/lock.sh && systemctl suspend; mode "default"
+        bindsym h exec ~/.config/i3/scripts/lock.sh && systemctl hibernate; mode "default"
+        bindsym p exec systemctl poweroff; mode "default"
+        bindsym r exec systemctl reboot; mode "default"
+        bindsym e exec --no-startup-id i3-msg exit; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3"
+
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/afterglow.png
+exec_always --no-startup-id picom -b --clear-shadow 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up k
@@ -220,28 +246,3 @@ bar {
   }
 }
 
-# class                 border  backgr. text    indicator child_border
-client.unfocused        #16161d #16161d #3E3E38 #6a9589 #3E3E38
-client.focused_inactive #16161d #16161d #3E3E38 #6a9589 #3E3E38
-client.focused          #16161d #16161d #c8c093 #c8c093 #c8c093
-
-# Open nextcloud in scratchpad
-exec_always /usr/bin/nextcloud
-for_window [class="Nextcloud"] floating enable, move scratchpad
-
-bindsym $mod+apostrophe exec i3-input -F "exec sh -c 'sleep %s && notify-send Remember-%ss-ago!'" -P 'Remind after: '
-
-mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3" {
-        bindsym l exec ~/.config/i3/scripts/lock.sh; mode "default"
-        bindsym s exec ~/.config/i3/scripts/lock.sh && systemctl suspend; mode "default"
-        bindsym h exec ~/.config/i3/scripts/lock.sh && systemctl hibernate; mode "default"
-        bindsym p exec systemctl poweroff; mode "default"
-        bindsym r exec systemctl reboot; mode "default"
-        bindsym e exec --no-startup-id i3-msg exit; mode "default"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+Shift+e mode "(l)ock (s)leep (h)ybernate (r)eboot (p)oweroff (e)xit-i3"
-
-exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper/afterglow.png
