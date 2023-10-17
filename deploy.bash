@@ -59,7 +59,7 @@ close_stderr_stdout()
 
 restore_stderr_stdout()
 {
-	exec 11>&1- 12>&2-     
+	exec 1>&11 2>&12 11>&- 12>&-
 }
 
 clean()
@@ -147,3 +147,5 @@ if [ ! -z $CUSTOMS_SCRIPT ]; then
 fi
 
 restore_stderr_stdout
+
+exit 0
