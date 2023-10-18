@@ -13,20 +13,24 @@
 ./deploy.bash -t home
 ./deploy.bash --help
 ```
-
-## Dependencies
-
-```shell
-
-```
-
 ## NVIM
 
 * Icon nvim-tree 
 
-Installer une des fonts : https://www.nerdfonts.com/font-downloads
+```shell
+pacman -S ttf-cousine-nerd
+```
 
-> For exampe Cousine
+* fzf telescope
+
+```shell
+cd ~/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim && make
+```
+* phpactor
+
+```shell
+cd ~/.local/share/nvim/site/pack/packer/opt/phpactor && composer install
+```
 
 ## LSP vue
 
