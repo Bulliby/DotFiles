@@ -38,7 +38,7 @@ vim.keymap.set('n', '<leader>so', builtin.oldfiles, {})
 vim.keymap.set('n', '<leader>st', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>sc', builtin.git_commits, {})
 
--- bbye
+-- bmoll/vim-bbye
 vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
 
 -- Lsp

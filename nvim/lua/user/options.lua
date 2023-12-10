@@ -31,8 +31,6 @@ vim.opt.shortmess:append({ I = true }) -- disable the splash screen
 --vim.opt.listchars = { tab = '▸ ', trail = '·' }
 --vim.opt.fillchars:append({ eob = ' ' }) -- remove the ~ from end of buffer
 -- vim.opt.sidescrolloff = 8
---vim.opt.backup = true -- automatically save a backup file
---vim.opt.backupdir:remove('.') -- keep backups out of the current directory
 --vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and allow tabbing the results to fully complete them
 --vim.opt.signcolumn = 'yes:2'
 --vim.opt.showmode = false

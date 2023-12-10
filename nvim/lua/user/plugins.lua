@@ -29,11 +29,10 @@ use 'wbthomason/packer.nvim' -- Let packer manage itself
 
 -- toggle gc
 use 'tpope/vim-commentary'
+
 -- color perf
 use 'navarasu/onedark.nvim'
 use 'moll/vim-bbye'
-use 'editorconfig/editorconfig-vim'
-
 
 use({
     'kyazdani42/nvim-tree.lua',
