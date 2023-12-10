@@ -11,39 +11,39 @@ vim.cmd([[
 ]])
 
 telescope.setup({
-    defaults = {
-        path_display = { truncate = 1 },
-        prompt_prefix = '   ',
-        sorting_strategy = 'ascending',
-        file_ignore_patterns = { '.git/' },
-        mappings = {
-            n = {
-                ["<C-c>"] = require('telescope.actions').close,
-                ["<ESC>"] = require('telescope.actions').close,
-            },
-            -- We are in insert mode when we are searching in searchbar.
-            i = {
-                ["<C-c>"] = require('telescope.actions').close,
-            },
-        },
+  defaults = {
+    path_display = { truncate = 1 },
+    prompt_prefix = '   ',
+    sorting_strategy = 'ascending',
+    file_ignore_patterns = { '.git/' },
+    mappings = {
+      n = {
+        ["<C-c>"] = require('telescope.actions').close,
+        ["<ESC>"] = require('telescope.actions').close,
+      },
+      -- We are in insert mode when we are searching in searchbar.
+      i = {
+        ["<C-c>"] = require('telescope.actions').close,
+      },
     },
-    pickers = {
-        find_files = {
-            hidden = true,
-        },
-        buffers = {
-            previewer = false,
-            layout_config = {
-                width = 80,
-            },
-        },
-        oldfiles = {
-            prompt_title = 'History',
-        },
-        lsp_references = {
-            previewer = false,
-        },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
     },
+    buffers = {
+      previewer = false,
+      layout_config = {
+        width = 80,
+      },
+    },
+    oldfiles = {
+      prompt_title = 'History',
+    },
+    lsp_references = {
+      previewer = false,
+    },
+  },
 })
 
 telescope.load_extension('fzf')
