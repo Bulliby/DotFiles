@@ -64,7 +64,7 @@ restore_stderr_stdout()
 
 clean()
 {
-    rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.yml,.zshrc,.zsh_bindkey,.tmux.conf}
+    rm -${v}f $HOME/{.vimrc,.screenrc,.gitconfig,.gitignore_global,.alacritty.toml,.zshrc,.zsh_bindkey,.tmux.conf}
     rm -${v}f $HOME/.bashrc
     rm -r${v}f $HOME/.vim/bundle/*
 
@@ -81,7 +81,7 @@ deploy()
     ln -s $ACTIVE_PATH/.screenrc $HOME/.screenrc
     ln -s $ACTIVE_PATH/.gitignore_global $HOME/.gitignore_global
     ln -s $ACTIVE_PATH/.gitconfig $HOME/.gitconfig
-    ln -s $ACTIVE_PATH/.alacritty.yml $HOME/.alacritty.yml
+    ln -s $ACTIVE_PATH/.alacritty.toml $HOME/.alacritty.toml
     ln -s $ACTIVE_PATH/toprc $HOME/.config/procps/toprc 
     ln -s $ACTIVE_PATH/.bashrc $HOME/.bashrc
     ln -s $ACTIVE_PATH/.zshrc $HOME/.zshrc
