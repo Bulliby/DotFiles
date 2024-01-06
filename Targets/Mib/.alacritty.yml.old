@@ -368,12 +368,6 @@ working_directory: /home/waxer
   # Record all characters and escape sequences as test data.
   #ref_test: false
 
-hints:
-  mouse:
-    url:
-      launcher:
-        program: firefox-developer-edition
-
 # Mouse bindings
 #
 # Mouse bindings are specified as a list of objects, much like the key
