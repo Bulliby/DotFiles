@@ -5,7 +5,7 @@ cursor = "0xC00FD2"
 text = "0xffffff"
 
 [font]
-size = 10
+size = 9
 
 [font.normal]
 family = "hack"

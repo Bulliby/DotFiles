@@ -10,10 +10,10 @@ cmp.setup({
     end
   },
   sources = {
+    {name = 'nvim_lsp', keyword_length = 3, priority_weight = 110},
+    {name = 'luasnip', keyword_length = 3, priority_weight = 100},
+    {name = 'buffer', keyword_length = 3, priority_weight = 100},
     {name = 'path'},
-    {name = 'nvim_lsp', keyword_length = 3},
-    {name = 'buffer', keyword_length = 3},
-    {name = 'luasnip', keyword_length = 2},
   },
   window = {
     documentation = cmp.config.window.bordered()
