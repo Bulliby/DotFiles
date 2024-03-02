@@ -39,3 +39,6 @@ vim.opt.shortmess:append({ I = true }) -- disable the splash screen
 
 -- Needed for autocomplete
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = false
