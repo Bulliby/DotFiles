@@ -97,15 +97,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 vim.diagnostic.config({
+  -- print the error messages, directly in the code
   virtual_text = false,
   severity_sort = true,
+  underline = false,
+  update_in_insert = false,
   float = {
     border = 'rounded',
     source = 'always',
     header = '',
     prefix = '',
-    --underline= 'severity',
-    update_in_insert = false,
   },
 })
 
+-- Disable diagnostic at start
+vim.diagnostic.disable()
