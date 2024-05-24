@@ -13,17 +13,21 @@ vim.cmd([[
 telescope.setup({
   defaults = {
     path_display = { truncate = 1 },
-    prompt_prefix = '   ',
+    prompt_prefix = '   >>>',
     sorting_strategy = 'ascending',
     file_ignore_patterns = { '.git/' },
     mappings = {
       n = {
-        ["<C-c>"] = require('telescope.actions').close,
-        ["<ESC>"] = require('telescope.actions').close,
+        ["<ESC>"] = 'close',
+        ["<leader>h"] = 'which_key',
+        ["<leader>p"] = require('telescope.actions.layout').toggle_preview,
       },
       -- We are in insert mode when we are searching in searchbar.
       i = {
-        ["<C-c>"] = require('telescope.actions').close,
+        ["<C-c>"] = 'close',
+        ["<C-n>"] = 'cycle_history_next',
+        ["<C-p>"] = 'cycle_history_prev',
+        ["<leader>h"] = 'which_key',
       },
     },
   },
