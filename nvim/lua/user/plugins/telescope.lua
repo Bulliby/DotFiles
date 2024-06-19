@@ -32,7 +32,11 @@ telescope.setup({
     },
   },
   pickers = {
+    live_grep = {
+      additional_args = function(opts) return {"--no-ignore", "-F"} end
+    },
     find_files = {
+      no_ignore = true,
       hidden = true,
     },
     buffers = {
