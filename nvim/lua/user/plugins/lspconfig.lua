@@ -19,7 +19,7 @@ lspconfig.pylsp.setup({
 })
 
 lspconfig.vuels.setup({
-  cmd = {home..'/.local/share/nvim/plugged/vuels/node_modules/vls/bin/vls', '--stdio'},
+  cmd = {home..'/.local/share/nvim/site/pack/packer/opt/vls/node_modules/vls/bin/vls', '--stdio'},
 })
 
 -- lspconfig.html.setup({
