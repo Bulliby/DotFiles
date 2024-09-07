@@ -1,13 +1,9 @@
-require('user.plugins')
-require('user.options')
+require('config.lazy')
+require('config.telescope')
+require('config.treesitter')
+require('config.nvim-tree')
+require('config.lsp')
 require('user.keymaps')
 require('user.abbreviations')
 require('user.autocommands')
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-local home = os.getenv("HOME")
-
-vim.cmd('source '..home..'/conf/DotFiles/nvim/vimscript/header.vim')
-vim.cmd[[colorscheme onedark]]
+require('user.options')

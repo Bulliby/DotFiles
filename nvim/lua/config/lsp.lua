@@ -1,11 +1,11 @@
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
-lsp_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lsp_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+-- lsp_defaults.capabilities = vim.tbl_deep_extend(
+--   'force',
+--   lsp_defaults.capabilities,
+--   require('cmp_nvim_lsp').default_capabilities()
+-- )
 
 local home = os.getenv("HOME")
 
@@ -14,13 +14,13 @@ lspconfig.phpactor.setup({
 })
 
 -- pacman -S pylsp
-lspconfig.pylsp.setup({
-  cmd = {'pylsp'},
-})
+-- lspconfig.pylsp.setup({
+--   cmd = {'pylsp'},
+-- })
 
-lspconfig.vuels.setup({
-  cmd = {home..'/.local/share/nvim/site/pack/packer/opt/vls/node_modules/vls/bin/vls', '--stdio'},
-})
+-- lspconfig.vuels.setup({
+--   cmd = {home..'/.local/share/nvim/site/pack/packer/opt/vls/node_modules/vls/bin/vls', '--stdio'},
+-- })
 
 -- lspconfig.html.setup({
 --     cmd = {home..'/.local/share/nvim/plugged/vscode-langservers-extracted/bin/vscode-html-language-server', '--stdio'},
@@ -42,22 +42,22 @@ lspconfig.vuels.setup({
 --     },
 -- })
 
-lspconfig.cssls.setup({
-  cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server', '--stdio'},
-  filetypes = { "css", "scss", "less" },
-  settings = {
-    css = {
-      validate = true
-    },
-    less = {
-      validate = true
-    },
-    scss = {
-      validate = true
-    }
-  },
-  single_file_support = true,
-})
+-- lspconfig.cssls.setup({
+--   cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server', '--stdio'},
+--   filetypes = { "css", "scss", "less" },
+--   settings = {
+--     css = {
+--       validate = true
+--     },
+--     less = {
+--       validate = true
+--     },
+--     scss = {
+--       validate = true
+--     }
+--   },
+--   single_file_support = true,
+-- })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',

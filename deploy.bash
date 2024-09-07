@@ -76,8 +76,6 @@ clean()
 deploy()
 {
     mkdir -p $HOME/.config/procps
-    ln -s $ACTIVE_PATH/.vim $HOME/.vim
-    ln -s $ACTIVE_PATH/.vimrc $HOME/.vimrc
     ln -s $ACTIVE_PATH/.screenrc $HOME/.screenrc
     ln -s $ACTIVE_PATH/.gitignore_global $HOME/.gitignore_global
     ln -s $ACTIVE_PATH/.gitconfig $HOME/.gitconfig
@@ -88,19 +86,6 @@ deploy()
     ln -s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
     ln -s $PWD/nvim $HOME/.config/nvim
     ln -s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
-
-    git clone https://github.com/preservim/nerdtree.git $ACTIVE_PATH/.vim/bundle/nerdtree
-    git clone https://github.com/dracula/vim.git $ACTIVE_PATH/.vim/bundle/dracula
-    git clone https://github.com/vim-airline/vim-airline.git $ACTIVE_PATH/.vim/bundle/vim-airline
-    git clone https://github.com/tpope/vim-commentary.git $ACTIVE_PATH/.vim/bundle/vim-commentary
-
-    git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
-
-    #Packager
-	curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-	cp robbyrussell.zsh-theme-pi $HOME/.oh-my-zsh/themes/robbyrussell.zsh-theme
-
 }
 
 debug()
