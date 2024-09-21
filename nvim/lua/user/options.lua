@@ -23,7 +23,7 @@ vim.opt.showcmd = true
 
 -- (https://github.com/jessarcher/dotfiles) --
 vim.opt.scrolloff = 8
--- vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
+vim.opt.clipboard='unnamedplus' -- Use Linux system clipboard
 vim.opt.shortmess:append({ I = true }) -- disable the splash screen
 --vim.opt.spell = true
 --vim.opt.breakindent = true -- maintain indent when wrapping indented lines
