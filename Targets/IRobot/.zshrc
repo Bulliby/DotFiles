@@ -13,6 +13,7 @@ alias bip="echo -e '\a'"
 alias vi="nvim"
 alias vim="nvim"
 alias glar='grep -rn --exclude-dir="vendor" --exclude-dir="node_module" --exclude="tags"'
+alias ls="ls --color=always"
 #alias grep="grep --color=always"
 alias tags='ctags -R --exclude="node_modules" --exclude="*.js" --exclude="var" --exclude="translations" --exclude="templates" --exclude="public" .'
 
@@ -27,7 +28,7 @@ bindkey ^S history-incremental-search-forward
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-zstyle ':vcs_info:git:*' formats '%b '
+zstyle ':vcs_info:git:*' formats '%b'
 
 setopt PROMPT_SUBST
-PROMPT='%F{%(#|red|blue)}%B%m%b%(#|%-1d.%1d|%~)%f %F{red}${vcs_info_msg_0_}%f %%'
+PROMPT='%F{%(#|red|blue)}%B%m%b%(#|%-1d.%1d|%~)%f %F{red}${vcs_info_msg_0_}%f %% '
