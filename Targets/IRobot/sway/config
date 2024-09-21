@@ -51,10 +51,13 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d $device_screen set 1000-
 set $mod Mod4
 exec_always /usr/bin/gammastep -O 3000 -P
 
+#https://github.com/swaywm/sway/wiki#input-configuration
+input type:keyboard {
+    xkb_layout us,us
+    xkb_variant intl,
+}
 
-# Change keyboard layout (tr, us, de)
-# bindsym $mod+Shift+u exec setxkbmap -layout us
-# bindsym $mod+Shift+f exec setxkbmap -layout us -variant intl
+bindsym $mod+Shift+g input type:keyboard xkb_switch_layout next
 
 #bindsym $mod+Shift+o exec bash ~/.config/i3/scripts/capture.sh
 
