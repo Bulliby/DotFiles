@@ -8,7 +8,6 @@ vim.opt.rnu = true
 vim.opt.nu = true
 vim.opt.incsearch = true -- Show progressive highlight of searched term.
 vim.opt.hidden = true
-vim.opt.smartindent = true
 vim.opt.title = true
 vim.opt.smartcase = true
 vim.opt.backup = false
@@ -20,6 +19,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.undofile = false
 vim.opt.showcmd = true
+vim.cmd.colorscheme "catppuccin-macchiato"
+
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
 
 -- (https://github.com/jessarcher/dotfiles) --
 vim.opt.scrolloff = 8

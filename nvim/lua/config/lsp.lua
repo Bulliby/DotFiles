@@ -10,7 +10,23 @@ local lsp_defaults = lspconfig.util.default_config
 local home = os.getenv("HOME")
 
 lspconfig.phpactor.setup({
-  cmd = {home..'/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'},
+})
+
+-- Create an event handler for the FileType autocommand
+vim.api.nvim_create_autocmd('FileType', {
+  -- This handler will fire when the buffer's 'filetype' is "python"
+  pattern = 'php',
+  callback = function(args)
+    vim.lsp.start({
+      name = 'phpactor',
+      cmd = {home..'/.local/share/nvim/lazy/phpactor/bin/phpactor', 'language-server'},
+      -- Set the "root directory" to the parent directory of the file in the
+      -- current buffer (`args.buf`) that contains either a "setup.py" or a
+      -- "pyproject.toml" file. Files that share a root directory will reuse
+      -- the connection to the same LSP server.
+      root_dir = vim.fs.root(args.buf, {'main.php', 'index.php', 'composer.json'}),
+    })
+  end,
 })
 
 -- pacman -S pylsp
@@ -111,4 +127,4 @@ vim.diagnostic.config({
 })
 
 -- Disable diagnostic at start
-vim.diagnostic.disable()
+--vim.diagnostic.disable()
