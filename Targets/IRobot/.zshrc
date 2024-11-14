@@ -1,12 +1,14 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 # History timestamps
 setopt EXTENDED_HISTORY
 
 export EDITOR="nvim"
+
 alias gt="git status"
 alias gl="git log --graph --oneline --decorate --all"
 alias bip="echo -e '\a'"
@@ -16,6 +18,7 @@ alias glar='grep -rn --exclude-dir="vendor" --exclude-dir="node_module" --exclud
 alias ls="ls --color=always"
 #alias grep="grep --color=always"
 alias tags='ctags -R --exclude="node_modules" --exclude="*.js" --exclude="var" --exclude="translations" --exclude="templates" --exclude="public" .'
+alias sync="bash /home/waxer/sync.sh"
 
 # Avoid Ctrl-S, stop automatic scroll, when no pager was available
 stty -ixon
@@ -23,6 +26,7 @@ stty -ixon
 bindkey ^R history-incremental-search-backward
 # Need stty -ixon
 bindkey ^S history-incremental-search-forward
+bindkey -e
 
 # Git infos
 autoload -Uz vcs_info

@@ -1,0 +1,28 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/mode"],
+    "modules-right": ["custom/loadavg", "battery", "pulseaudio", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "custom/loadavg": {
+        "exec": "cat /proc/loadavg | awk '{print $1, $2, $3}'",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": " {volume} % 🕪 ",
+        "format-muted": "0 % 🕨",
+        "format-icons": {
+        }
+    }
+}
