@@ -18,7 +18,7 @@ alias glar='grep -rn --exclude-dir="vendor" --exclude-dir="node_module" --exclud
 alias ls="ls --color=always"
 #alias grep="grep --color=always"
 alias tags='ctags -R --exclude="node_modules" --exclude="*.js" --exclude="var" --exclude="translations" --exclude="templates" --exclude="public" .'
-alias sync="bash /home/waxer/sync.sh"
+alias nsync="bash /home/waxer/sync.sh"
 
 # Avoid Ctrl-S, stop automatic scroll, when no pager was available
 stty -ixon
