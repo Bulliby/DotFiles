@@ -36,3 +36,7 @@ zstyle ':vcs_info:git:*' formats '%b'
 
 setopt PROMPT_SUBST
 PROMPT='%F{%(#|red|blue)}%B%m%b%(#|%-1d.%1d|%~)%f %F{red}${vcs_info_msg_0_}%f %% '
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
+. ~/conf/DotFiles/Targets/IRobot/git-completion.sh

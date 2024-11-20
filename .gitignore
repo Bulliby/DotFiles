@@ -1,3 +1,4 @@
 Targets/*/ohmyzsh/
 Targets/*/.vim/bundle/
 wallpaper
+Targets/IRobot/.docker/config.json
