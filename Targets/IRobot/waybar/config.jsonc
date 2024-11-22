@@ -11,7 +11,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "🕓 {:%H:%M}"
     },
     "custom/loadavg": {
         "return-type": "json",
