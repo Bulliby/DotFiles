@@ -7,21 +7,22 @@
         "max-length": 50
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{icon}   {capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
         "format-alt": "{:%a, %d. %b  %H:%M}"
     },
     "custom/loadavg": {
-        "exec": "cat /proc/loadavg | awk '{print $1, $2, $3}'",
-        "interval": 1,
-        "format": "{}",
+        "return-type": "json",
+        "exec": "cat /proc/loadavg | jq -Rn 'inputs / \" \" | {text: \"\\(.[0]) \\(.[1]) \\(.[2])\"}' --unbuffered --compact-output",
+        "interval": 10,
+        "format": "  {}",
         "tooltip": false
     },
     "pulseaudio": {
-        "format": " {volume} % 🕪 ",
-        "format-muted": "0 % 🕨",
+        "format": "   {volume} %",
+        "format-muted": " 0 %",
         "format-icons": {
         }
     }
