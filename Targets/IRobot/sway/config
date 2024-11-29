@@ -15,7 +15,7 @@ font pango:hack 10
 # hide border
 default_border pixel
 
-output * bg /home/waxer/Desktop/wallpaper.jpg fill
+output * bg /home/waxer/Desktop/wallpaper2.jpg fill
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -39,9 +39,9 @@ output * bg /home/waxer/Desktop/wallpaper.jpg fill
 #set $refresh_i3status killall -SIGUSR1 i3status
 
 # Find keycodes wev on Wayland.
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D hw:0 set Master 1dB+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D hw:0 set Master 1dB-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume `pactl get-default-sink` '+1dB'
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume `pactl get-default-sink` '-1dB'
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute `pactl get-default-sink` toggle
 #  pactl set-card-profile 0 output:analog-stereo
 #  pactl set-card-profile 0 output:hdmi-stereo
 
