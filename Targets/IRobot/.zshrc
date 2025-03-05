@@ -11,6 +11,7 @@ export EDITOR="nvim"
 
 alias gt="git status"
 alias gl="git log --graph --oneline --decorate --all"
+alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
 alias bip="echo -e '\a'"
 alias vi="nvim"
 alias vim="nvim"
@@ -19,6 +20,7 @@ alias ls="ls --color=always"
 #alias grep="grep --color=always"
 alias tags='ctags -R --exclude="node_modules" --exclude="*.js" --exclude="var" --exclude="translations" --exclude="templates" --exclude="public" .'
 alias nsync="bash /home/waxer/sync.sh"
+alias open="xdg-open"
 
 # Avoid Ctrl-S, stop automatic scroll, when no pager was available
 stty -ixon
