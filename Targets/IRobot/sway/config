@@ -53,14 +53,13 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d $device_screen set 1000-
 set $mod Mod4
 exec_always /usr/bin/gammastep -O 2500 -P
 
-#https://github.com/swaywm/sway/wiki#input-configuration
-#Dead key for french accents
+#https://github.com/swaywm/sway/wiki#keyboard-layout
 input type:keyboard {
-    xkb_layout us,us
-    xkb_variant ,intl,
+    xkb_layout us
+    xkb_options compose:rctrl
 }
 
-bindsym $mod+Shift+g input type:keyboard xkb_switch_layout next
+
 bindsym $mod+Shift+y exec grim -g "$(slurp -d)" - | wl-copy
 
 # class                 border  backgr. text    indicator child_border
@@ -116,8 +115,9 @@ bindsym $mod+Return exec foot
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-set $menu dmenu_path | wmenu | xargs swaymsg exec --
+# start dmenu (a program launcher) old one
+#set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $menu fuzzel
 bindsym $mod+d exec $menu
 # A more modern dmenu replacement is rofi:
 # bindsym Mod1+d exec "rofi -modi drun,run -show drun"
@@ -164,7 +164,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
