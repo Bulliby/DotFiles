@@ -313,6 +313,36 @@ label:focus {
     border-radius: 10px;
 }
 
+#custom-bitcoin {
+    background-color: #E6AFA7;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 25px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#custom-sol {
+    background-color: #E6AFA7;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 25px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#custom-iota {
+    background-color: #E6AFA7;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 25px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 #pulseaudio {
     background-color: rgba(250, 250, 50, 1);
     padding-left: 10px;
