@@ -1,63 +1,24 @@
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
--- lsp_defaults.capabilities = vim.tbl_deep_extend(
---   'force',
---   lsp_defaults.capabilities,
---   require('cmp_nvim_lsp').default_capabilities()
--- )
-
 local home = os.getenv("HOME")
 
-lspconfig.phpactor.setup({
-  cmd = {home..'/.local/share/nvim/site/pack/packer/opt/phpactor/bin/phpactor', 'language-server'},
+-- Create an event handler for the FileType autocommand
+vim.api.nvim_create_autocmd('FileType', {
+  -- This handler will fire when the buffer's 'filetype' is "python"
+  pattern = 'php',
+  callback = function(args)
+    vim.lsp.start({
+      name = 'phpactor',
+      cmd = {home..'/.local/share/nvim/lazy/phpactor/bin/phpactor', 'language-server'},
+      -- Set the "root directory" to the parent directory of the file in the
+      -- current buffer (`args.buf`) that contains either a "setup.py" or a
+      -- "pyproject.toml" file. Files that share a root directory will reuse
+      -- the connection to the same LSP server.
+      root_dir = vim.fs.root(args.buf, { '/home/waxer/dev' }),
+    })
+  end,
 })
-
--- pacman -S pylsp
--- lspconfig.pylsp.setup({
---   cmd = {'pylsp'},
--- })
-
--- lspconfig.vuels.setup({
---   cmd = {home..'/.local/share/nvim/site/pack/packer/opt/vls/node_modules/vls/bin/vls', '--stdio'},
--- })
-
--- lspconfig.html.setup({
---     cmd = {home..'/.local/share/nvim/plugged/vscode-langservers-extracted/bin/vscode-html-language-server', '--stdio'},
---     filetypes = {"html"},
---     configurationSection = {
---         { "html", "css", "javascript" },
---         embeddedLanguages = {
---             css = true,
---             javascript = true,
---         },
---         provideFormatter = true,
---     },
---     settings = {
---         css = {
---             lint = {
---                 validProperties = {},
---             },
---         },
---     },
--- })
-
--- lspconfig.cssls.setup({
---   cmd = {home..'/.local/share/nvim/plugged/vscode-html-language-server/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server', '--stdio'},
---   filetypes = { "css", "scss", "less" },
---   settings = {
---     css = {
---       validate = true
---     },
---     less = {
---       validate = true
---     },
---     scss = {
---       validate = true
---     }
---   },
---   single_file_support = true,
--- })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
@@ -111,4 +72,4 @@ vim.diagnostic.config({
 })
 
 -- Disable diagnostic at start
-vim.diagnostic.disable()
+--vim.diagnostic.disable()

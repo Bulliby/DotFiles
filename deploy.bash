@@ -86,6 +86,8 @@ deploy()
     ln -s $ACTIVE_PATH/.zsh_bindkey $HOME/.zsh_bindkey
     ln -s $PWD/nvim $HOME/.config/nvim
     ln -s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
+    # docker completion
+    ln -s $ACTIVE_PATH/.docker $HOME/.docker
 }
 
 debug()

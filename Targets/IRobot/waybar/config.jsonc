@@ -1,0 +1,47 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/mode"],
+    "modules-right": ["custom/bitcoin", "custom/iota", "custom/sol", "custom/loadavg", "battery", "pulseaudio", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{icon}   {capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "🕓 {:%H:%M}"
+    },
+    "custom/loadavg": {
+        "return-type": "json",
+        "exec": "cat /proc/loadavg | jq -Rn 'inputs / \" \" | {text: \"\\(.[0]) \\(.[1]) \\(.[2])\"}' --unbuffered --compact-output",
+        "interval": 10,
+        "format": "  {}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "   {volume} %",
+        "format-muted": " 0 %",
+        "format-icons": {
+        }
+    },
+    "custom/bitcoin": {
+        "format": "  {}",
+        "exec": "/usr/bin/curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd' | jq '.bitcoin.usd'",
+        "interval": 120,
+        "tooltip": false
+    },
+    "custom/sol": {
+        "format": "  {}",
+        "exec": "/usr/bin/curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=Solana&vs_currencies=usd' | jq '.solana.usd'",
+        "interval": 120,
+        "tooltip": false
+    },
+    "custom/iota": {
+        "format":" {}",
+        "exec": "/usr/bin/curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=iota&vs_currencies=usd' | jq '.iota.usd'",
+        "interval": 120,
+        "tooltip": false
+    }
+}
