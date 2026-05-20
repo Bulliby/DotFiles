@@ -42,7 +42,8 @@ vim.keymap.set('n', '<leader>sc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>x', ':Bdelete<CR>')
 
 -- Lsp
-vim.keymap.set({'n','i','x'}, '<leader>le', vim.diagnostic.enable)
-vim.keymap.set({'n','i','x'}, '<leader>ld', vim.diagnostic.disable)
+vim.keymap.set({'n','i','x'}, '<leader>le', function () vim.diagnostic.enable(true) end)
+vim.keymap.set({'n','i','x'}, '<leader>ld', function () vim.diagnostic.enable(false) end)
+
 
 vim.keymap.set('i', 'jk', '<esc>')
