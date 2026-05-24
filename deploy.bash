@@ -69,7 +69,7 @@ clean()
     rm -r${v}f $HOME/.vim/bundle/*
 
     # L'expansion avec les accolad ne semble pas fonctionner pour les dossiers
-    rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps $HOME/.config/nvim
+    rm -${v}rf "$HOME/.oh-my-zsh" "$HOME/.vim" $HOME/.config/procps $HOME/.config/nvim $HOME/.docker
 }
 
 
@@ -87,7 +87,7 @@ deploy()
     ln -s $PWD/nvim $HOME/.config/nvim
     ln -s $ACTIVE_PATH/.tmux.conf $HOME/.tmux.conf
     # docker completion
-    ln -s $ACTIVE_PATH/.docker $HOME/.docker
+    cp -rv $ACTIVE_PATH/.docker $HOME/.docker
 }
 
 debug()
